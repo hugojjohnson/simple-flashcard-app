@@ -47,5 +47,20 @@ button:hover {
 }
 
 .hidden {
-    opacity: 0;
+    display: none;
+}
+
+.selected {
+    background-color: rgb(195, 254, 235);
+    border-radius: 20px;
+}
+.mcq h3 {
+    padding: 3px 35px;
+}
+
+.correct {
+    background-color: limegreen;
+}
+.incorrect {
+    background-color: lightcoral;
 }
