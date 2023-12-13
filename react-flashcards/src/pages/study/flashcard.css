@@ -1,0 +1,76 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    /* ^ for text */
+    align-items: center;
+    /* ^ for inline block */
+}
+
+/* .title {
+    border: solid 5px black;
+} */
+
+
+.term,
+.definition {
+    display: inline-block;
+    width: 45%;
+    height: 300px;
+    border-radius: 5%;
+    ;
+    box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.2);
+    padding-top: 40px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    display: inline-block;
+    width: 300px;
+    height: 70px;
+    font-size: large;
+    transition: transform 0.3s ease-in-out;
+    margin: 30px;
+    /* Add a smooth scale animation */
+}
+
+button:hover {
+    transform: scale(1.1);
+    animation-duration: 4s;
+}
+
+.hidden {
+    display: none;
+}
+
+.selected {
+    background-color: rgb(195, 254, 235);
+    border-radius: 20px;
+}
+
+.mcq h3 {
+    padding: 3px 35px;
+}
+
+.correct {
+    background-color: limegreen;
+}
+
+.incorrect {
+    background-color: lightcoral;
+}
+
+input {
+    width: 300px;
+    padding: 5px;
+    font-size: large;
+}

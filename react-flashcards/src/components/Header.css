@@ -1,0 +1,20 @@
+a {
+    text-decoration: none;
+    color: black;
+    padding: 0px;
+}
+
+.log-in, .sign-up {
+    border-radius: 10%;
+    margin: 5px;
+    justify-self: center;
+}
+
+.sign-up {
+    background-color: black;
+    color: white;
+}
+
+.log-in {
+    border: 1px solid black;
+}

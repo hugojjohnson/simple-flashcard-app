@@ -1,0 +1,73 @@
+{
+	"yayyy": [
+		{
+			"id": "cmsg496e3f6",
+			"type": "Basic",
+			"term": "yay",
+			"definition": "how cool"
+		},
+		{
+			"id": "ci3adr4dya5",
+			"type": "MCQ",
+			"term": "Finally",
+			"options": [
+				"A machine",
+				"A rock",
+				"Sadness",
+				"woah"
+			],
+			"correctIndex": 0
+		},
+		{
+			"type": "MCQ",
+			"term": "Yessssss",
+			"options": [
+				"Paris",
+				"Bologna",
+				"Pisa",
+				"France"
+			],
+			"correctIndex": 0
+		}
+	],
+	"27e6f695d734689575e2a063b77668a1fab9c7a83071134630f6a02ebf697592": [
+		{
+			"id": "qbbvhme30ho",
+			"type": "Basic",
+			"term": "hi",
+			"definition": "hi"
+		},
+		{
+			"id": "vc2ta0r7gf",
+			"type": "MCQ",
+			"term": "mcq question",
+			"options": [
+				"correct",
+				"not",
+				"not",
+				"not"
+			],
+			"correctIndex": 0
+		},
+		{
+			"id": "8d0aigzlj6r",
+			"type": "Text",
+			"term": "this is a text flashcard",
+			"definition": "and this is the answer nice"
+		}
+	],
+	"5186646859c5b07676015f15c581e2514b2b778309f9422150a6032f826f388e": [
+		{
+			"id": "t02veyin04",
+			"type": "MCQ",
+			"term": "What book is on Daisy's shelf?",
+			"options": [
+				"A tale of two cities",
+				"Live Beautiful",
+				"Napoleon",
+				"Oliver twist"
+			],
+			"correctIndex": 1
+		}
+	]
+}

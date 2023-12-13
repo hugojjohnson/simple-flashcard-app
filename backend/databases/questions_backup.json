@@ -1,0 +1,23 @@
+[
+    {
+      "type": "MCQ",
+      "term": "What is the capital of france??",
+      "options": [
+            "Paris",
+            "Bologna",
+            "Pisa",
+            "France"
+        ],
+      "correctIndex": 0
+    },
+    {
+      "type": "Flashcard",
+      "term": "What is the best programming language?",
+      "definition": "OBviously React..."
+    },
+    {
+      "type": "Text",
+      "term": "What is the word for grapefruit in French?",
+      "definition": "pamplemousse"
+    }
+]
