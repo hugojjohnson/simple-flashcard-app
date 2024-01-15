@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/simple-flashcard-app/static/css/main.931e6e02.css",
+    "main.js": "/simple-flashcard-app/static/js/main.a346b91a.js",
+    "index.html": "/simple-flashcard-app/index.html",
+    "main.931e6e02.css.map": "/simple-flashcard-app/static/css/main.931e6e02.css.map",
+    "main.a346b91a.js.map": "/simple-flashcard-app/static/js/main.a346b91a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.931e6e02.css",
+    "static/js/main.a346b91a.js"
+  ]
+}
