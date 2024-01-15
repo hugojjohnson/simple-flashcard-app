@@ -15,13 +15,15 @@ function Header() {
     useEffect(() => {
         async function setPfp() {
             try {
+                console.log("user profile: ")
+                console.log(user.profile)
                 const response = await axios.get(`${BASE_API}profile-pic?profileName=${user.profile}`);
                 if (response.status === 200) {
                     setProfileLink(`${BASE_API}profile-pic?profileName=${user.profile}`)
                 }
             } catch (error) {
                 console.error(error);
-                setProfileLink("/icons/profile.jpeg");
+                setProfileLink(BASE_API + "/icons/profile.jpeg");
             }
         };
         setPfp();
@@ -50,7 +52,7 @@ function Header() {
     return(<>
     <div className="header-parent">
     {/* Also marked as header so it's arranged in a column. */}
-        <Link to="/" className="header"> 
+        <Link to={BASE_URL + "/"} className="header"> 
             <img
                 // src="https://upload.wikimedia.org/wikipedia/commons/3/34/Home-icon.svg"
                 src={BASE_URL + "/icons/home.svg"}
