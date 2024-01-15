@@ -4,7 +4,7 @@
     "express": "^4.18.2"
   },
   "scripts": {
-    "start": "cd backend && nodemon server"
+    "startproduction": "cd backend && node server"
   },
   "engines": {
   "node": "20.9.0"
