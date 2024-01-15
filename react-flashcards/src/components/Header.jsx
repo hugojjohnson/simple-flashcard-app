@@ -9,7 +9,7 @@ function Header() {
     const [user] = useContext(UserContext);
     const [profileLink, setProfileLink] = useState("/icons/white.jpg");
 
-    const BASE_URL = "/demo/flashcard-app"
+    const BASE_URL = "/simple-flashcard-app"
 
     useEffect(() => {
         async function setPfp() {

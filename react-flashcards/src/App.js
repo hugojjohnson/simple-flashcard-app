@@ -22,7 +22,7 @@ function App() {
     token: localStorage.getItem('flashcard-token'),
     profile: localStorage.getItem("flashcard-pfp") === null ? "default" : localStorage.getItem("flashcard-pfp")
   });
-  const BASE_URL = "/demo/flashcard-app"
+  const BASE_URL = "/simple-flashcard-app"
   const BASE_API = "https://react-flashcards-backend-edd1c24981f6.herokuapp.com/"
 
   useEffect(() => {

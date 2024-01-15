@@ -7,7 +7,7 @@ import axios from "axios";
 
 export default function Signup() {
     const [user] = useContext(UserContext);
-    const BASE_URL = "/demo/flashcard-app"
+    const BASE_URL = "/simple-flashcard-app"
     const BASE_API = "https://react-flashcards-backend-edd1c24981f6.herokuapp.com/"
 
     // Local state

@@ -16,7 +16,8 @@ app.use((req, res, next) => {
 });
 var allowCrossDomain = function (req, res, next) {
     // Something called CORS; I'm not sure what it is but we need this code here.
-    res.header('Access-Control-Allow-Origin', "http://localhost:3000");
+    // res.header('Access-Control-Allow-Origin', "http://localhost:3000");
+    res.header('Access-Control-Allow-Origin', "https://hugojjohnson.github.io");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();

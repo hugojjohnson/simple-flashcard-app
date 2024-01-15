@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function Home() {
-    const BASE_URL = "/demo/flashcard-app"
+    const BASE_URL = "/simple-flashcard-app"
     
     return(<>
         <h1>Home</h1>
