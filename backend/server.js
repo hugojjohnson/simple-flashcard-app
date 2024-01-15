@@ -23,7 +23,8 @@ var allowCrossDomain = function (req, res, next) {
     next();
 }
 app.use(allowCrossDomain);
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' })); // Update the origin with your frontend's URL
+// app.use(cors({ credentials: true, origin: 'http://localhost:3000' })); // Update the origin with your frontend's URL
+app.use(cors({ credentials: true, origin: "https://hugojjohnson.github.io" })); // Update the origin with your frontend's URL
 // You need both of these lines to be able to accept JSON from a post request.
 app.use(express.urlencoded({ extended: true })); // So we can use forms with req.body.variableName
 app.use(express.json());
