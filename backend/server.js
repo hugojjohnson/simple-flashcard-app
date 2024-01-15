@@ -72,16 +72,12 @@ app.get("/profile-pic", (req, res) => {
 
 
 
-// AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
 app.get('*', (req, res) => {
-    res.send("Page not found.");
+    res.send("Request not found.");
     res.end();
-    // res.sendFile(path.join(__dirname + FRONTEND_PATH + 'index.html'))
 })
 
 
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
-
-// app.listen(process.env.PORT);
