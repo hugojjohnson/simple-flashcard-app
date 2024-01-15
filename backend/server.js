@@ -7,6 +7,8 @@ const cors = require('cors');
 const userAPI = require("./databases/userAPI");
 const { readJson } = require("./databases/dataAPI");
 
+const FRONTEND_PATH = '/../react-flashcards/build/'
+
 app.use((req, res, next) => {
     // If you want to send JSON, you need this middleware, which sents the Content-Type header.
     res.setHeader('Content-Type', 'application/json');
@@ -27,7 +29,7 @@ app.use(express.json());
 
 
 // Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, '../frontend/build')))
+app.use(express.static(path.join(__dirname, FRONTEND_PATH)))
 
 
 
@@ -70,7 +72,8 @@ app.get("/profile-pic", (req, res) => {
 
 // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/../frontend/build/index.html'))
+    res.sendFile(path.join(__dirname + FRONTEND_PATH + 'index.html'))
 })
 
+console.log(process.env.PORT)
 app.listen(process.env.PORT);
