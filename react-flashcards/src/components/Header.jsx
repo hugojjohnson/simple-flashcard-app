@@ -17,12 +17,12 @@ function Header() {
             try {
                 console.log("user profile: ")
                 console.log(user.profile)
-                const response = await axios.get(`${BASE_API}profile-pic?profileName=${user.profile}`);
+                const response = await axios.get("/" + `${BASE_API}profile-pic?profileName=${user.profile}`);
                 if (response.status === 200) {
                     setProfileLink(`${BASE_API}profile-pic?profileName=${user.profile}`)
                 }
             } catch (error) {
-                console.error(error);
+                console.log(error);
                 setProfileLink(BASE_API + "/icons/profile.jpeg");
             }
         };
