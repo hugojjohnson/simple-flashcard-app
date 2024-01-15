@@ -19,11 +19,11 @@ function Header() {
                 console.log(user.profile)
                 const response = await axios.get(BASE_API + `profile-pic?profileName=${user.profile}`);
                 if (response.status === 200) {
-                    setProfileLink(BASE_API + "THISISTHEPROBLAFEM" + `profile-pic?profileName=${user.profile}`)
+                    setProfileLink(BASE_API + `profile-pic?profileName=${user.profile}`)
                 }
             } catch (error) {
                 console.log(error);
-                setProfileLink(BASE_API + "THISISTHEPROBLEM" + "/icons/profile.jpeg");
+                setProfileLink(BASE_API + "/icons/profile.jpeg");
             }
         };
         setPfp();
@@ -42,7 +42,7 @@ function Header() {
                 </Link>
 
                 <Link to={BASE_URL + "/sign-up"} className="header sign-up">
-                    <p>Sign up hi</p>
+                    <p>Sign up</p>
                 </Link>
             </div>
             <Outlet />
