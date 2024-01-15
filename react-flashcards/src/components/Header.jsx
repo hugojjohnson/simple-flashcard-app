@@ -88,7 +88,7 @@ function Header() {
             <img
                 id="profile-pic"
                 // src="https://static.wikia.nocookie.net/moshimonsters/images/b/bc/Diavlo3-472x480.jpg"
-                src={BASE_URL + profileLink}
+                src={profileLink}
                 alt="Profile"
                 className="icon"
             />
