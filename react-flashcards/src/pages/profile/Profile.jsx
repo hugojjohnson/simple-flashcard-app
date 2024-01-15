@@ -17,7 +17,7 @@ export default function Profile() {
             <img style={{"width": "150px", "height": "150px", "borderRadius": "50%", "border": "1px solid grey",
             "margin": "10px" }}
             key={index}
-                src={BASE_API + `profile-pic?profileName=${encodeURIComponent(profile)}`}
+                src={BASE_API + "THISISTHEPROBLEMM" + `profile-pic?profileName=${encodeURIComponent(profile)}`}
             alt="profile option"
             onClick={() => {
                 localStorage.setItem("flashcard-pfp", profile);
