@@ -12,8 +12,11 @@ function Edit() {
     const [editing, setEditing] = useState(false);
     const [editQuestion, setEditQuestion] = useState(undefined);
 
+    const BASE_API = "https://react-flashcards-backend-edd1c24981f6.herokuapp.com/"
+
+
     useEffect(() => {
-        axios.post("http://localhost:3001/questions", {
+        axios.post(BASE_API + "questions", {
             token: user.token
         })
             .then(response => setQuestions(response.data));

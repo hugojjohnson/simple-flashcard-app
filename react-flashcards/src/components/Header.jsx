@@ -9,6 +9,8 @@ function Header() {
     const [user] = useContext(UserContext);
     const [profileLink, setProfileLink] = useState("/icons/white.jpg");
 
+    const BASE_URL = "/demo/flashcard-app"
+
     useEffect(() => {
         async function setPfp() {
             try {
@@ -28,15 +30,15 @@ function Header() {
         return(<>
             <div className="header-parent">
 
-                <Link to="/" className="header left-wrapper">
+                <Link to={BASE_URL + "/"} className="header left-wrapper">
                     <p>Home</p>
                 </Link>
 
-                <Link to="/login" className="header log-in">
+                <Link to={BASE_URL + "/login"} className="header log-in">
                     <p>Log in</p>
                 </Link>
 
-                <Link to="/sign-up" className="header sign-up">
+                <Link to={BASE_URL + "/sign-up"} className="header sign-up">
                     <p>Sign up</p>
                 </Link>
             </div>
@@ -57,7 +59,7 @@ function Header() {
             <p>Home</p>
         </Link>
 
-        <Link to="/edit" className="header">
+            <Link to={BASE_URL + "/edit"} className="header">
             <img
                 // src="https://cdn3.iconfinder.com/data/icons/feather-5/24/edit-512.png"
                 src="/icons/edit.png"
@@ -69,7 +71,7 @@ function Header() {
 
         <p>{user.name}</p>
 
-        <Link  to="/study" className="header left-wrapper">
+            <Link to={BASE_URL + "/study"} className="header left-wrapper">
             <img
                 // src="https://cdn-icons-png.flaticon.com/512/566/566985.png"
                 src="/icons/study.png"
@@ -79,7 +81,7 @@ function Header() {
             <p>Study</p>
         </Link>
 
-        <Link to="/profile" className="header">
+            <Link to={BASE_URL + "/profile"} className="header">
             <img
                 id="profile-pic"
                 // src="https://static.wikia.nocookie.net/moshimonsters/images/b/bc/Diavlo3-472x480.jpg"

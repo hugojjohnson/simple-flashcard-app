@@ -13,10 +13,11 @@ import { UserContext } from '../../Context';
 export default function Study() {
     const [user] = useContext(UserContext);
     const [questions, setQuestions] = useState(undefined);
+    const BASE_API = "https://react-flashcards-backend-edd1c24981f6.herokuapp.com/"
 
     useEffect(() => {
         async function getQuestions() {
-            const response = await axios.post("http://localhost:3001/questions", {
+            const response = await axios.post(BASE_API + "questions", {
                 token: user.token
             });
             console.log("got questions: " + response.data);

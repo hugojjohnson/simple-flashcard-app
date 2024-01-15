@@ -7,6 +7,8 @@ import axios from "axios";
 
 export default function Login() {
     const [user, setUser] = useContext(UserContext);
+    const BASE_URL = "/demo/flashcard-app"
+    const BASE_API = "https://react-flashcards-backend-edd1c24981f6.herokuapp.com/"
 
     // Local state
     const [email, setEmail] = useState("");
@@ -17,7 +19,7 @@ export default function Login() {
     useEffect(() => {
         if (user.loggedIn) {
             console.log("User is logged in.");
-            return navigate("/");
+            return navigate(BASE_URL + "/");
         }
     }, [navigate, user.loggedIn]);
 
@@ -38,7 +40,7 @@ export default function Login() {
         }
 
         try {
-            const result = await axios.post("http://localhost:3001/log-in", {
+            const result = await axios.post(BASE_API + "log-in", {
                 salt: await saltify(email + password)
             });
 
@@ -49,7 +51,7 @@ export default function Login() {
             } else if (result.status === 200) {
                 setUser({...user, loggedIn: true, token: result.data.token, profile: result.data.profile });
                 localStorage.setItem("flashcard-token", result.data);
-                navigate("/study");
+                navigate(BASE_URL + "/study");
                 return;
             }
         } catch (error) {

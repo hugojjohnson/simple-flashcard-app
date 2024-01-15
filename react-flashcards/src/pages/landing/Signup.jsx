@@ -7,6 +7,8 @@ import axios from "axios";
 
 export default function Signup() {
     const [user] = useContext(UserContext);
+    const BASE_URL = "/demo/flashcard-app"
+    const BASE_API = "https://react-flashcards-backend-edd1c24981f6.herokuapp.com/"
 
     // Local state
     const [email, setEmail] = useState("");
@@ -38,7 +40,7 @@ export default function Signup() {
         }
 
         try {
-            const result = await axios.post("http://localhost:3001/create-user", {
+            const result = await axios.post(BASE_API + "create-user", {
                 salt: await saltify(email + password)
             });
 
@@ -47,7 +49,7 @@ export default function Signup() {
                     setLoginMessage("User alredy exists.");
                     break;
                 case "Success":
-                    navigate("/login");
+                    navigate(BASE_URL + "/login");
                     break;
                 default:
                     setLoginMessage("Error signing up.");

@@ -7,6 +7,8 @@ export default function Profile() {
     const [profiles, setProfiles] = useState([]);
     // recipe.image = (`http://localhost:3001/profile-pic?profileName=${encodeURIComponent(notSureYet)}`);
 
+    const BASE_API = "https://react-flashcards-backend-edd1c24981f6.herokuapp.com/"
+
     useEffect(() => getProfiles, []);
 
     const profileList = profiles.map((profile, index) => {
@@ -15,7 +17,7 @@ export default function Profile() {
             <img style={{"width": "150px", "height": "150px", "borderRadius": "50%", "border": "1px solid grey",
             "margin": "10px" }}
             key={index}
-            src={`http://localhost:3001/profile-pic?profileName=${encodeURIComponent(profile)}`}
+                src={BASE_API + `profile-pic?profileName=${encodeURIComponent(profile)}`}
             alt="profile option"
             onClick={() => {
                 localStorage.setItem("flashcard-pfp", profile);
@@ -46,7 +48,7 @@ export default function Profile() {
 
 
     async function getProfiles() {
-        const response = await axios.get("http://localhost:3001/profile-pics");
+        const response = await axios.get(BASE_API + "profile-pics");
         const myProfiles = Object.keys(response.data);
 
         setProfiles(myProfiles);

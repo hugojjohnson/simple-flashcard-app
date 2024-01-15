@@ -12,21 +12,22 @@ import Home from './pages/landing/Home.jsx';
 import Signup from './pages/landing/Signup.jsx';
 import Login from './pages/profile/Login.jsx';
 import axios from 'axios';
-
 // const nice = require("./UserAPI.js")
 
 function App() {
-  console.log(localStorage.getItem('flashcard-token') !== null);
+  // console.log(localStorage.getItem('flashcard-token') !== null);
 
   const [user, setUser] = useState({
     loggedIn: localStorage.getItem('flashcard-token') !== null,
     token: localStorage.getItem('flashcard-token'),
     profile: localStorage.getItem("flashcard-pfp") === null ? "default" : localStorage.getItem("flashcard-pfp")
   });
+  const BASE_URL = "/demo/flashcard-app"
+  const BASE_API = "https://react-flashcards-backend-edd1c24981f6.herokuapp.com/"
 
   useEffect(() => {
     async function checkToken() {
-      const response = await axios.post("http://localhost:3001/verify-token", {
+      const response = await axios.post(BASE_API + "verify-token", {
         token: user.token
       });
       if (response.data === "Logged in!") {
@@ -47,15 +48,15 @@ function App() {
   return (<UserContext.Provider value={[user, setUser]}>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Header />}>
+        <Route path={BASE_URL} element={<Header />}>
           <Route index element={<Home />} />
-          <Route path="/sign-up" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+          <Route path={BASE_URL + "/sign-up"} element={<Signup />} />
+          <Route path={BASE_URL + "/login"} element={<Login />} />
 
           {user.loggedIn === true ? (<>
-          <Route path="/study" element={<Study />} />
-          <Route path="/edit" element={<Edit />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path={BASE_URL + "/study"} element={<Study />} />
+          <Route path={BASE_URL + "/edit"} element={<Edit />} />
+          <Route path={BASE_URL + "/profile"} element={<Profile />} />
           </>)
           : (
             <Route path="*" element={<p>You must be logged in.</p>} />
