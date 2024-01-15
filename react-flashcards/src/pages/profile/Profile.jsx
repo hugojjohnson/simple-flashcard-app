@@ -9,7 +9,7 @@ export default function Profile() {
 
     const BASE_API = "https://react-flashcards-backend-edd1c24981f6.herokuapp.com/"
 
-    useEffect(getProfiles, []);
+    useEffect(getProfiles());
 
     const profileList = profiles.map((profile, index) => {
         console.log(index)
