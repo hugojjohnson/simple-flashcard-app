@@ -48,6 +48,7 @@ export default function Profile() {
 
 
     async function getProfiles() {
+        console.log("Getting profiles")
         const response = await axios.get(BASE_API + "profile-pics");
         const myProfiles = Object.keys(response.data);
 
