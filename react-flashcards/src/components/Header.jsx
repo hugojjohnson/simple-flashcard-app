@@ -9,14 +9,15 @@ function Header() {
     const [user] = useContext(UserContext);
     const [profileLink, setProfileLink] = useState("/icons/white.jpg");
 
+    const BASE_API = "https://react-flashcards-backend-edd1c24981f6.herokuapp.com/"
     const BASE_URL = "/simple-flashcard-app"
 
     useEffect(() => {
         async function setPfp() {
             try {
-                const response = await axios.get(`http://localhost:3001/profile-pic?profileName=${user.profile}`);
+                const response = await axios.get(`${BASE_API}profile-pic?profileName=${user.profile}`);
                 if (response.status === 200) {
-                    setProfileLink(`http://localhost:3001/profile-pic?profileName=${user.profile}`)
+                    setProfileLink(`${BASE_API}profile-pic?profileName=${user.profile}`)
                 }
             } catch (error) {
                 console.error(error);
@@ -52,7 +53,7 @@ function Header() {
         <Link to="/" className="header"> 
             <img
                 // src="https://upload.wikimedia.org/wikipedia/commons/3/34/Home-icon.svg"
-                src="/icons/home.svg"
+                src={BASE_URL + "/icons/home.svg"}
                 alt="Home"
                 className="icon" 
             />
@@ -62,7 +63,7 @@ function Header() {
             <Link to={BASE_URL + "/edit"} className="header">
             <img
                 // src="https://cdn3.iconfinder.com/data/icons/feather-5/24/edit-512.png"
-                src="/icons/edit.png"
+                src={BASE_URL + "/icons/edit.png"}
                 alt="Edit"
                 className="icon"
             />
@@ -74,7 +75,7 @@ function Header() {
             <Link to={BASE_URL + "/study"} className="header left-wrapper">
             <img
                 // src="https://cdn-icons-png.flaticon.com/512/566/566985.png"
-                src="/icons/study.png"
+                src={BASE_URL + "/icons/study.png"}
                 alt="Study"
                 className="icon"
             />
@@ -85,7 +86,7 @@ function Header() {
             <img
                 id="profile-pic"
                 // src="https://static.wikia.nocookie.net/moshimonsters/images/b/bc/Diavlo3-472x480.jpg"
-                src={profileLink}
+                src={BASE_URL + profileLink}
                 alt="Profile"
                 className="icon"
             />

@@ -8,6 +8,8 @@ export default function MCQ({ question, setEditing }) {
     const [options, setOptions] = useState(["", "", "", ""]);
     const [correctOption, setCorectOption] = useState(0);
 
+    const BASE_API = "https://react-flashcards-backend-edd1c24981f6.herokuapp.com/"
+
     useEffect(() => {
         if (question !== undefined) {
             setTerm(question.term);
@@ -54,7 +56,7 @@ export default function MCQ({ question, setEditing }) {
         if (question !== undefined) {
             finalCard.id = question.id;
             try {
-                await axios.post('http://localhost:3001/update-card', {
+                await axios.post(BASE_API + 'update-card', {
                     token: user.token,
                     newCard: JSON.stringify(finalCard)
                 });
@@ -67,7 +69,7 @@ export default function MCQ({ question, setEditing }) {
         }
 
         try {
-            await axios.post('http://localhost:3001/add-card', {
+            await axios.post(BASE_API + 'add-card', {
                 token: user.token,
                 newCard: JSON.stringify(finalCard)
             });

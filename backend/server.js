@@ -19,11 +19,11 @@ var allowCrossDomain = function (req, res, next) {
     // res.header('Access-Control-Allow-Origin', "http://localhost:3000");
     res.header('Access-Control-Allow-Origin', "https://hugojjohnson.github.io");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    // res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 }
 app.use(allowCrossDomain);
-// app.use(cors({ credentials: true, origin: 'http://localhost:3000' })); // Update the origin with your frontend's URL
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' })); // Update the origin with your frontend's URL
 app.use(cors({ credentials: true, origin: "https://hugojjohnson.github.io" })); // Update the origin with your frontend's URL
 // You need both of these lines to be able to accept JSON from a post request.
 app.use(express.urlencoded({ extended: true })); // So we can use forms with req.body.variableName
@@ -74,9 +74,9 @@ app.get("/profile-pic", (req, res) => {
 
 // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
 app.get('*', (req, res) => {
-    // res.send("Page not found.");
-    // res.end();
-    res.sendFile(path.join(__dirname + FRONTEND_PATH + 'index.html'))
+    res.send("Page not found.");
+    res.end();
+    // res.sendFile(path.join(__dirname + FRONTEND_PATH + 'index.html'))
 })
 
 
